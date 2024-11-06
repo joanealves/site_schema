@@ -3,7 +3,7 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 
 const ERPSection = () => {
   return (
-    <Box width="100%" height="265px" bg="#25548A" display="flex" justifyContent="center" alignItems="center">
+    <Box width="100%" height="265px" bg="#4E57A7" display="flex" justifyContent="center" alignItems="center">
       <Flex
         width="100%"
         maxW="1200px" 

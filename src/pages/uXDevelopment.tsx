@@ -1,27 +1,47 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Box, Flex, SimpleGrid, Text, VStack, Image } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  SimpleGrid,
+  Text,
+  VStack,
+  chakra,
+  shouldForwardProp,
+  Image,
+} from '@chakra-ui/react';
+import { motion, isValidMotionProp } from 'framer-motion';
 import Menu from '../components/Menu';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import DesignSection from '../components/DesignSection';
+
 import WhatsappButton from '../components/WhatsappButton';
+import WebSection from '../components/WebSection';
+
+
+const MotionBox = chakra(motion.div, {
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
 
 interface ContentCardProps {
   image: string;
   text: string;
-  isHighlight?: boolean; 
+  isHighlight?: boolean;
 }
 
 const ContentCard: React.FC<ContentCardProps> = ({ image, text, isHighlight }) => {
   return (
-    <Box width="100%" p={0} m={0}>
-      <Box position="relative" width="60px" height="60px" mb="36px">
+    <VStack align="center" spacing="16px">
+      <MotionBox
+        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação suave ao passar o mouse
+        mb="16px"
+      >
         <Image src={image} alt="logo ux" boxSize="60px" objectFit="cover" />
-      </Box>
-      <Text fontSize="sm" color={isHighlight ? '#25548A' : '#FFF'} textAlign="left">
+      </MotionBox>
+      <Text fontSize="sm" color={isHighlight ? '#25548A' : '#FFF'} textAlign="center">
         {text}
       </Text>
-    </Box>
+    </VStack>
   );
 };
 
@@ -44,56 +64,62 @@ const UXDevelopment: React.FC = () => {
   if (!hydrated) return null;
 
   return (
-    <Box width="100%" minHeight="100vh" bg="#222224" boxSizing="border-box">
+    <Box width="100%" minHeight="100vh" bg="#222224" boxSizing="border-box" pb="40px">
       <Menu 
         onServicesClick={() => scrollToSection(servicesRef)}
         onAboutClick={() => scrollToSection(aboutRef)}
         onContactClick={() => scrollToSection(contactRef)}
       />
       
-      {/* Imagem da capa */}
-      <Box position="relative" width="100%" height="400px" boxSizing="border-box">
-        <Image src="/assets/capaux.jpg" alt="Imagem da Capa UX" width="100%" height="400px" objectFit="cover" />
+      <Box width="100%" height="auto">
+        <img
+          src="/assets/capaux.jpg"
+          alt="Imagem da Capa de UXUI"
+          style={{ width: '100%', height: '640px' }}
+        />
       </Box>
 
       {/* Conteúdo principal */}
       <Flex justifyContent="center" mt="26px" width="100%">
         <Box width="100%" maxWidth="1131px">
-          <SimpleGrid columns={2} spacingX="230px">
+          <SimpleGrid columns={2} spacingX="230px" pb="40px">
             <VStack spacing="26px">
               <ContentCard
-                image="/assets/erp/image1.jpg"
+                image="/assets/uxanalise.svg"
                 text="Pesquisa e Análise Aprofundada."
               />
               <ContentCard
-                image="/assets/erp/image2.jpg"
+                image="/assets/prototip.svg"
                 text="Prototipagem e Testes Iterativos."
               />
               <ContentCard
-                image="/assets/erp/image3.jpg"
+                image="/assets/uxtest.svg"
                 text="Avaliação de Usabilidade e Melhoria Contínua."
               />
             </VStack>
             <VStack spacing="26px">
               <ContentCard
-                image="/assets/erp/image4.jpg"
+                image="/assets/uxdesignuser.svg"
                 text="Design Centrado no Usuário."
               />
               <ContentCard
-                image="/assets/erp/image5.jpg"
+                image="/assets/uxtreino.svg"
                 text="Treinamento Especializado e Suporte Contínuo."
               />
               <ContentCard
-                image="/assets/erp/image6.jpg"
+                image="/assets/uxprototipe.svg"
                 text="Interfaces intuitivas e agradáveis para fidelizar o usuário."
-                isHighlight={true}
+                isHighlight
               />
             </VStack>
           </SimpleGrid>
         </Box>
       </Flex>
 
-      <DesignSection />
+      
+      <WebSection imageSrc="/assets/mobile.png" bgColor='#4E57A7' />
+
+      
       <WhatsappButton />
 
       {/* Seção de contato */}

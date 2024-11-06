@@ -30,7 +30,7 @@ const ContentCard: React.FC<{
   return (
     <VStack align="center" spacing="16px">
       <MotionBox
-        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala suave ao passar o mouse
+        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}  
         mb="16px"
       >
         <img
@@ -114,7 +114,7 @@ const WebDevelopment = () => {
       </Flex>
 
       {/* WebSection */}
-      <WebSection />
+      <WebSection imageSrc="/assets/Home1.png" bgColor='#9D334B' />
 
       {/* Botão do WhatsApp */}
       <WhatsappButton />
