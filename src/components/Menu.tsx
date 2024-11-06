@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Flex, Text, Spacer, Button } from "@chakra-ui/react";
+import { Box, Flex, Text, Spacer, Button, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, useDisclosure } from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 interface MenuProps {
   onServicesClick?: () => void;
@@ -9,6 +10,8 @@ interface MenuProps {
 }
 
 const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactClick }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box
       width="100%" 
@@ -35,13 +38,20 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
 
         <Spacer />
 
-        <Text textAlign="center" fontSize="18px" color="#EF3E66" lineHeight="40px">
+        <Text
+          display={{ base: "none", md: "block" }} 
+          textAlign="center" 
+          fontSize="18px" 
+          color="#EF3E66" 
+          lineHeight="40px"
+        >
           PREPARE-SE PARA SUBIR DE NÍVEL
         </Text>
 
         <Spacer />
 
-        <Flex gap="10px" alignItems="center">
+        {/* Menu Desktop */}
+        <Flex display={{ base: "none", md: "flex" }} gap="10px" alignItems="center">
           <Text 
             onClick={onServicesClick} 
             fontSize="18px" 
@@ -78,6 +88,72 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
             Fale Conosco
           </Button>
         </Flex>
+
+        {/* Menu Hambúrguer para Mobile */}
+        <IconButton
+          aria-label="Open menu"
+          icon={<HamburgerIcon />}
+          display={{ base: "flex", md: "none" }}
+          onClick={onOpen}
+          variant="outline"
+          color="white"
+          borderColor="white"
+        />
+
+        {/* Drawer (Menu Lateral) para Mobile */}
+        <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+          <DrawerOverlay />
+          <DrawerContent bg="#222224">
+            <DrawerCloseButton color="white" />
+            <DrawerBody display="flex" flexDirection="column" alignItems="center" justifyContent="center">
+              <Text 
+                onClick={() => {
+                  onServicesClick && onServicesClick();
+                  onClose();
+                }}
+                fontSize="18px"
+                color="#EF3E66"
+                _hover={{ color: "#FFFF" }}
+                cursor="pointer"
+                mb="20px"
+              >
+                Serviços
+              </Text>
+              <Text 
+                onClick={() => {
+                  onAboutClick && onAboutClick();
+                  onClose();
+                }}
+                fontSize="18px"
+                color="#EF3E66"
+                _hover={{ color: "#FFFF" }}
+                cursor="pointer"
+                mb="20px"
+              >
+                Quem Somos
+              </Text>
+              <Button
+                onClick={() => {
+                  onContactClick && onContactClick();
+                  onClose();
+                }}
+                variant="outline"
+                borderColor="white" 
+                color="white"
+                width="119px"
+                height="40px"
+                _hover={{ color: "#EF3E66" }}
+                border="2px solid white"
+                borderRadius="6px"
+                bg="transparent"
+                cursor="pointer"
+                mt="10px"
+              >
+                Fale Conosco
+              </Button>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
       </Flex>
     </Box>
   );
