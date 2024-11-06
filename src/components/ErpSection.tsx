@@ -3,7 +3,7 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 
 const ERPSection = () => {
   return (
-    <Box width="100%" height="265px" bg="#4E57A7" display="flex" justifyContent="center" alignItems="center">
+    <Box width="100%" height="265px" bg="#25548A" display="flex" justifyContent="center" alignItems="center">
       <Flex
         width="100%"
         maxW="1200px" 
@@ -19,6 +19,7 @@ const ERPSection = () => {
           lineHeight="tall" 
           display="flex"
           alignItems="center" 
+          ml="64px" 
         >
           Na Schema, estamos comprometidos em fornecer soluções de ERP de alta qualidade e sob medida para atender às necessidades específicas do seu negócio. Nossa equipe de especialistas está pronta para oferecer um sistema de gestão integrado que revolucionará a maneira como você opera.
         </Text>

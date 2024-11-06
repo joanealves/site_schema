@@ -32,7 +32,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ image, text, isHighlight }) =
   return (
     <VStack align="center" spacing="16px">
       <MotionBox
-        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala suave ao passar o mouse
+        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} 
         mb="16px"
       >
         {image && <Image src={image} alt="ERP Icon" boxSize="60px" />}
@@ -51,7 +51,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ image, text, isHighlight }) =
 
 const ERPDevelopment = () => {
   return (
-    <Box width="100%" bg="#222224" minHeight="100vh" pb="40px">
+    <Box width="100%" bg="##25548A" minHeight="100vh">
       <Menu />
       
       {/* Imagem da capa */}
@@ -100,11 +100,10 @@ const ERPDevelopment = () => {
         </Box>
       </Flex>
 
-      {/* ERPSection, Contato e Footer */}
       <ERPSection />
-      <Contact />
+      <Contact buttonColor='#25548A'/>
       <WhatsappButton />
-      <Footer />
+      <Footer bgColor='#25548A' />
     </Box>
   );
 };

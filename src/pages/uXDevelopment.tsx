@@ -64,7 +64,7 @@ const UXDevelopment: React.FC = () => {
   if (!hydrated) return null;
 
   return (
-    <Box width="100%" minHeight="100vh" bg="#222224" boxSizing="border-box" pb="40px">
+    <Box width="100%" minHeight="100vh" bg="#222224" boxSizing="border-box" >
       <Menu 
         onServicesClick={() => scrollToSection(servicesRef)}
         onAboutClick={() => scrollToSection(aboutRef)}
@@ -124,10 +124,10 @@ const UXDevelopment: React.FC = () => {
 
       {/* Seção de contato */}
       <div ref={contactRef}>
-        <Contact />
+        <Contact  buttonColor='#4E57A7'/>
       </div>
 
-      <Footer />
+      <Footer bgColor='#4E57A7'/>
     </Box>
   );
 };

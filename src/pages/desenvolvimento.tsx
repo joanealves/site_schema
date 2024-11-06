@@ -52,7 +52,7 @@ const ContentCard: React.FC<{
 
 const WebDevelopment = () => {
   return (
-    <Box width="100%" bg="#222224" minHeight="100vh" pb="40px">
+    <Box width="100%" bg="#222224" minHeight="100vh">
       {/* Menu */}
       <Menu />
 
@@ -114,7 +114,7 @@ const WebDevelopment = () => {
       </Flex>
 
       {/* WebSection */}
-      <WebSection imageSrc="/assets/Home1.png" bgColor='#9D334B' />
+      <WebSection imageSrc="/assets/xr.png" bgColor='#9D334B' />
 
       {/* Botão do WhatsApp */}
       <WhatsappButton />

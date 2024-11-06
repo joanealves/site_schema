@@ -1,9 +1,13 @@
 import { Box, Text, VStack, StackProps } from '@chakra-ui/react';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  bgColor?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ bgColor = "#9D334B" }) => {
   return (
     <Box
-      bg="#9D334B" 
+      bg={bgColor} 
       color="white" 
       height="60px" 
       width="100%" 

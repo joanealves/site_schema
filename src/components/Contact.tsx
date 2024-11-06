@@ -1,9 +1,26 @@
 import React from 'react';
-import { Box, Flex, Text, Button, VStack, Input, Textarea, HStack, Icon, FormControl, FormLabel, Image } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Text,
+  Button,
+  VStack,
+  Input,
+  Textarea,
+  HStack,
+  Icon,
+  FormControl,
+  FormLabel,
+  Image,
+} from '@chakra-ui/react';
 import { PhoneIcon, EmailIcon } from '@chakra-ui/icons';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
-const Contact: React.FC = () => {
+interface ContactProps {
+  buttonColor?: string; // Prop opcional para a cor do botão
+}
+
+const Contact: React.FC<ContactProps> = ({ buttonColor = "#9D334B" }) => {
   return (
     <Flex
       width="100vw"
@@ -125,7 +142,7 @@ const Contact: React.FC = () => {
           </FormControl>
           <Button 
             mt={4} 
-            bg="#9D334B"
+            bg={buttonColor}
             color="white"
             width="146px"  
             height="60px"  
