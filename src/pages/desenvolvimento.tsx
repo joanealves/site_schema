@@ -52,7 +52,7 @@ const ContentCard: React.FC<{
 
 const WebDevelopment = () => {
   return (
-    <Box width="100%" bg="#222224" minHeight="100vh">
+    <Box width="100%" bg="#222224" minHeight="100vh" pb="40px">
       {/* Menu */}
       <Menu />
 
@@ -72,6 +72,7 @@ const WebDevelopment = () => {
             columns={{ base: 1, md: 2 }}
             spacingX={{ base: '20px', md: '230px' }}
             spacingY="26px"
+            pb="40px" 
           >
             <VStack spacing="26px">
               <ContentCard

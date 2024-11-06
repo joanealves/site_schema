@@ -1,77 +1,106 @@
 import React from 'react';
-import { Box, Flex, SimpleGrid, Image, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  SimpleGrid,
+  Text,
+  VStack,
+  chakra,
+  shouldForwardProp,
+  Image,
+} from '@chakra-ui/react';
+import { motion, isValidMotionProp } from 'framer-motion';
 import Menu from '../components/Menu';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ERPSection from '../components/ErpSection';
 import WhatsappButton from '../components/WhatsappButton';
 
+// Criando o componente MotionBox que integra o Chakra UI com o Framer Motion
+const MotionBox = chakra(motion.div, {
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
+
 interface ContentCardProps {
   image?: string;
   text: string;
-  isHighlight?: boolean; 
+  isHighlight?: boolean;
 }
 
 const ContentCard: React.FC<ContentCardProps> = ({ image, text, isHighlight }) => {
   return (
-    <Box p="16px" borderRadius="8px" bg="white">
-      {image && <Image src={image} alt="logo erp" boxSize="60px" mb="36px" />}
+    <VStack align="center" spacing="16px">
+      <MotionBox
+        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala suave ao passar o mouse
+        mb="16px"
+      >
+        {image && <Image src={image} alt="ERP Icon" boxSize="60px" />}
+      </MotionBox>
       <Text
         fontSize="sm"
-        color={isHighlight ? '#25548A' : 'gray.600'}
+        color={isHighlight ? '#25548A' : 'white'}
         fontWeight={isHighlight ? 'bold' : 'normal'}
-        textAlign="left"
+        textAlign="center"
       >
         {text}
       </Text>
-    </Box>
+    </VStack>
   );
 };
 
 const ERPDevelopment = () => {
   return (
-    <Box width="100%" bg="white">
+    <Box width="100%" bg="#222224" minHeight="100vh" pb="40px">
       <Menu />
       
+      {/* Imagem da capa */}
       <Box width="100%" height="auto">
-        <Image src="/assets/erpcapa.jpg" alt="Imagem da Capa ERP" width="100%" height="auto" />
+        <img
+          src="/assets/erpcapa.jpg"
+          alt="Imagem da Capa de ERP"
+          style={{ width: '100%', height: '640px' }}
+        />
       </Box>
 
+      {/* Conteúdo principal */}
       <Flex justifyContent="center" mt="26px">
         <Box width="calc(100% - 200px)" maxWidth="1131px">
-          <SimpleGrid columns={2} spacingX="230px">
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacingX={{ base: '20px', md: '230px' }} spacingY="26px" pb="40px">
             <VStack spacing="26px">
               <ContentCard
-                image="/assets/erp_talk.png"
+                image="/assets/erptalk.svg"
                 text="Análise e Consultoria Especializada."
               />
               <ContentCard
-                image="/assets/erp_colaborate.png"
+                image="/assets/erpintegracao.svg"
                 text="Integração sem Complicações."
               />
               <ContentCard
-                image="/assets/seguranca.jpg"
+                image="/assets/erpsecurity.svg"
                 text="Segurança e Conformidade."
               />
             </VStack>
             <VStack spacing="26px">
               <ContentCard
-                image="/assets/erp_config.png"
+                image="/assets/erpconfig.svg"
                 text="Personalização Abrangente."
               />
               <ContentCard
-                image="/assets/erp_mensagem.png"
+                image="/assets/erpsuporte.svg"
                 text="Treinamento Especializado e Suporte Contínuo."
               />
               <ContentCard
+                image="/assets/erppower.svg"
                 text="Potencialize seu Negócio com um ERP personalizado."
-                isHighlight={true}
+                isHighlight
               />
             </VStack>
           </SimpleGrid>
         </Box>
       </Flex>
 
+      {/* ERPSection, Contato e Footer */}
       <ERPSection />
       <Contact />
       <WhatsappButton />
