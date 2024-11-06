@@ -1,28 +1,52 @@
 import React from 'react';
-import { Box, Flex, SimpleGrid, Text, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  SimpleGrid,
+  Text,
+  VStack,
+  chakra,
+  shouldForwardProp,
+} from '@chakra-ui/react';
+import { motion, isValidMotionProp } from 'framer-motion';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 import WebSection from '../components/WebSection';
 import WhatsappButton from '../components/WhatsappButton';
 import Contact from '../components/Contact';
 
-const ContentCard: React.FC<{ image: string; title: string; text: string; isHighlight?: boolean }> = ({
-  image,
-  title,
-  text,
-  isHighlight,
-}) => {
+// Criando o componente MotionBox que integra o Chakra UI com o Framer Motion
+const MotionBox = chakra(motion.div, {
+  shouldForwardProp: (prop) =>
+    isValidMotionProp(prop) || shouldForwardProp(prop),
+});
+
+const ContentCard: React.FC<{
+  image: string;
+  title: string;
+  text: string;
+  isHighlight?: boolean;
+}> = ({ image, title, text, isHighlight }) => {
   return (
-    <Box>
-      <img
-        src={image}
-        alt={title}
-        style={{ width: '60px', height: '60px', marginBottom: '36px' }}
-      />
-      <Text fontSize="sm" color={isHighlight ? '#E75475' : '#FFF'} textAlign="left">
+    <VStack align="center" spacing="16px">
+      <MotionBox
+        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação de escala suave ao passar o mouse
+        mb="16px"
+      >
+        <img
+          src={image}
+          alt={title}
+          style={{ width: '60px', height: '60px' }}
+        />
+      </MotionBox>
+      <Text
+        fontSize="sm"
+        color={isHighlight ? '#E75475' : '#FFF'}
+        textAlign="center"
+      >
         {text}
       </Text>
-    </Box>
+    </VStack>
   );
 };
 
@@ -32,49 +56,53 @@ const WebDevelopment = () => {
       {/* Menu */}
       <Menu />
 
-      {/* Imagem da capa */}
+      {/* Imagem da capa específica para a página de desenvolvimento */}
       <Box width="100%" height="auto">
         <img
-          src="/src/assets/capa.jpg" 
-          alt="Imagem da Capa"
-          style={{ width: '100%', height: 'auto' }}
+          src="/assets/capadev.jpg"
+          alt="Imagem da Capa de Desenvolvimento"
+          style={{ width: '100%', height: '640px' }}
         />
       </Box>
 
       {/* Conteúdo da página */}
       <Flex justifyContent="center" mt="26px">
         <Box width="calc(100% - 200px)" maxWidth="1131px">
-          <SimpleGrid columns={{ base: 1, md: 2 }} spacingX={{ base: '20px', md: '230px' }} spacingY="26px">
+          <SimpleGrid
+            columns={{ base: 1, md: 2 }}
+            spacingX={{ base: '20px', md: '230px' }}
+            spacingY="26px"
+          >
             <VStack spacing="26px">
               <ContentCard
-                image="/assets/image1.jpg"
+                image="/assets/iconmarca.svg"
                 title="Design Distinto e Personalizado"
                 text="Cada site e landing page que criamos é único e alinhado com a identidade visual da sua marca."
               />
               <ContentCard
-                image="/assets/image2.jpg"
+                image="/assets/iconresponsive.svg"
                 title="Responsividade em Todos os Dispositivos"
                 text="Seu site ou landing page será perfeitamente funcional em desktops, tablets e smartphones."
               />
               <ContentCard
-                image="/assets/image3.jpg"
+                image="/assets/iconmanutence.svg"
                 title="Manutenção e Suporte Contínuos"
                 text="Fornecemos suporte técnico contínuo e atualizações regulares."
               />
             </VStack>
             <VStack spacing="26px">
               <ContentCard
-                image="/assets/image4.jpg"
+                image="/assets/iconexperiencia.svg"
                 title="Foco na Conversão e Usabilidade"
                 text="Priorizamos a usabilidade e a experiência do usuário."
               />
               <ContentCard
-                image="/assets/image5.jpg"
+                image="/assets/iconform.svg"
                 title="Integração com Ferramentas Essenciais"
                 text="Integramos funcionalidades essenciais como formulários de contato."
               />
               <ContentCard
-                image="/assets/image6.jpg"
+                image="/assets/iconroxo.svg"
                 title="Elevando Sua Presença Online com Sites Incríveis"
                 text="Nossa equipe de especialistas em design e desenvolvimento está pronta para transformar sua visão em realidade."
                 isHighlight

@@ -53,7 +53,7 @@ const UXDevelopment: React.FC = () => {
       
       {/* Imagem da capa */}
       <Box position="relative" width="100%" height="400px" boxSizing="border-box">
-        <Image src="/assets/capa_ux.png" alt="Imagem da Capa UX" width="100%" height="400px" objectFit="cover" />
+        <Image src="/assets/capaux.jpg" alt="Imagem da Capa UX" width="100%" height="400px" objectFit="cover" />
       </Box>
 
       {/* Conteúdo principal */}

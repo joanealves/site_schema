@@ -3,7 +3,7 @@ import { Box, Flex, SimpleGrid, Image, Text, VStack } from '@chakra-ui/react';
 import Menu from '../components/Menu';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import ERPSection from '../components/ERPSection';
+import ERPSection from '../components/ErpSection';
 import WhatsappButton from '../components/WhatsappButton';
 
 interface ContentCardProps {
@@ -34,7 +34,7 @@ const ERPDevelopment = () => {
       <Menu />
       
       <Box width="100%" height="auto">
-        <Image src="/assets/capa_erp.png" alt="Imagem da Capa ERP" width="100%" height="auto" />
+        <Image src="/assets/erpcapa.jpg" alt="Imagem da Capa ERP" width="100%" height="auto" />
       </Box>
 
       <Flex justifyContent="center" mt="26px">
