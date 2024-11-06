@@ -1,5 +1,18 @@
 import React from 'react';
-import { Box, Flex, Text, Spacer, Button, IconButton, Drawer, DrawerOverlay, DrawerContent, DrawerCloseButton, DrawerBody, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Spacer,
+  Button,
+  IconButton,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerBody,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -39,7 +52,7 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
         <Spacer />
 
         <Text
-          display={{ base: "none", md: "block" }} 
+          display={{ base: "none", md: "block" }}
           textAlign="center" 
           fontSize="18px" 
           color="#EF3E66" 
@@ -108,7 +121,7 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
             <DrawerBody display="flex" flexDirection="column" alignItems="center" justifyContent="center">
               <Text 
                 onClick={() => {
-                  onServicesClick && onServicesClick();
+                  if (onServicesClick) onServicesClick();
                   onClose();
                 }}
                 fontSize="18px"
@@ -121,7 +134,7 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
               </Text>
               <Text 
                 onClick={() => {
-                  onAboutClick && onAboutClick();
+                  if (onAboutClick) onAboutClick();
                   onClose();
                 }}
                 fontSize="18px"
@@ -134,7 +147,7 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
               </Text>
               <Button
                 onClick={() => {
-                  onContactClick && onContactClick();
+                  if (onContactClick) onContactClick();
                   onClose();
                 }}
                 variant="outline"
