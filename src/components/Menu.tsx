@@ -22,13 +22,15 @@ interface MenuProps {
   onContactClick?: () => void;
 }
 
-const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactClick }) => {
+const Menu: React.FC<MenuProps> = ({ 
+  onServicesClick, onAboutClick, onContactClick 
+}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <Box
       width="100%" 
-      padding="0 20px"
+      padding="0 16px"
       fontFamily="'Quicksand', sans-serif"
       position="fixed"           
       top="0"                   
@@ -91,11 +93,12 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
             color="white"
             width="119px"
             height="40px"
-            _hover={{ color: "#EF3E66" }} 
-            border="2px solid white" 
+            _hover={{bg: '#524f50', border: '1px solid white' }} 
+            border="1px solid white" 
             borderRadius="6px"
             bg="transparent"
             cursor="pointer"
+            fontWeight={500}
             onClick={onContactClick}
           >
             Fale Conosco

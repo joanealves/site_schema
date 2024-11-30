@@ -12,6 +12,7 @@ import {
   FormControl,
   FormLabel,
   Image,
+  Grid,
 } from '@chakra-ui/react';
 import { PhoneIcon, EmailIcon } from '@chakra-ui/icons';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -36,6 +37,7 @@ const Contact: React.FC<ContactProps> = ({ buttonColor = "#9D334B" }) => {
         height="660px"
         borderRadius="md"
         overflow="hidden"
+        display={{base: 'column', md: 'row'}}
         boxShadow="lg"
         style={{
           background: 'linear-gradient(90deg, rgba(37, 84, 138, 0.04) 50%, transparent 50%)' 
@@ -84,55 +86,56 @@ const Contact: React.FC<ContactProps> = ({ buttonColor = "#9D334B" }) => {
           justifyContent="center"
           bg="#2D2D2D"
           color="white"
+          gap="46px"
         >
-          <FormControl mb="45px">
-            <FormLabel color="white">Nome</FormLabel>
-            <Input 
-              placeholder="Digite seu nome" 
-              variant="flushed"
-              _placeholder={{ color: '#A0AEC0' }}
-              focusBorderColor="white"
-              size="lg"
-              height="60px"  
-              borderBottom="1px solid white"
-              width="50%"  
-            />
-          </FormControl>
-          <HStack spacing="40px" mb="45px">
-            <FormControl width="50%">
-              <FormLabel color="white">Email</FormLabel>
+          <Grid gap="16px" templateColumns="1fr 1fr">
+            <FormControl >
+              <FormLabel color="white">Nome</FormLabel>
               <Input 
-                placeholder="Digite seu email" 
+                placeholder="Digite seu nome" 
                 variant="flushed"
                 _placeholder={{ color: '#A0AEC0' }}
-                focusBorderColor="white"
+                focusBorderColor="#9D334B"
                 size="lg"
-                height="60px" 
+                height="60px"  
                 borderBottom="1px solid white"
-                width="100%"  
               />
             </FormControl>
-            <FormControl width="50%">
+            <FormControl>
               <FormLabel color="white">Telefone</FormLabel>
               <Input 
                 placeholder="Digite seu telefone" 
                 variant="flushed"
                 _placeholder={{ color: '#A0AEC0' }}
-                focusBorderColor="white"
+                focusBorderColor="#9D334B"
                 size="lg"
                 height="60px"  
                 borderBottom="1px solid white"
-                width="100%"  
               />
             </FormControl>
-          </HStack>
-          <FormControl mb="45px">
+          </Grid>
+
+          <FormControl>
+            <FormLabel color="white">Email</FormLabel>
+            <Input 
+              placeholder="Digite seu email" 
+              variant="flushed"
+              _placeholder={{ color: '#A0AEC0' }}
+              focusBorderColor="#9D334B"
+              size="lg"
+              height="60px" 
+              borderBottom="1px solid white"
+              width="100%"  
+            />
+          </FormControl>
+
+          <FormControl>
             <FormLabel color="white">Mensagem</FormLabel>
             <Textarea 
               placeholder="Digite sua mensagem" 
               variant="flushed"
               _placeholder={{ color: '#A0AEC0' }}
-              focusBorderColor="white"
+              focusBorderColor="#9D334B"
               size="lg"
               height="120px"
               borderBottom="1px solid white"
@@ -140,12 +143,12 @@ const Contact: React.FC<ContactProps> = ({ buttonColor = "#9D334B" }) => {
               mr="15px"  
             />
           </FormControl>
+
           <Button 
-            mt={4} 
             bg={buttonColor}
             color="white"
             width="146px"  
-            height="60px"  
+            height="36px"  
             fontWeight="bold"
             borderRadius="6px"
             _hover={{ bg: "pink.600" }}

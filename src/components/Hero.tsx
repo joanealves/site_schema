@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 const Hero: React.FC = () => {
   return (
     <Box
-      height="476px"
+      height={{base: "234px", md: '476px'}}
       width="100%"
       bgImage="url('/assets/capa.jpg')" 
       bgRepeat="no-repeat"
