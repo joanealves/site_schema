@@ -6,7 +6,7 @@ import Hero from '../components/Hero';
 import ServicesSection from '../components/ServiceSection';
 import LevelSection from '../components/LevelSection';
 import AboutSection from '../components/AboutSection';
-// import Contact from '../components/Contact';
+import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import ProjectJourneySection from '../components/ProjectJourneySection';
 import WhatsappButton from '../components/WhatsappButton';
@@ -39,9 +39,9 @@ const HomePage: React.FC = () => {
       <LevelSection />
       <ProjectJourneySection />
       <WhatsappButton />
-      {/* <div ref={contactRef}>
+      <div ref={contactRef}>
         <Contact />
-      </div> */}
+      </div>
       <Footer />
     </Box>
   );

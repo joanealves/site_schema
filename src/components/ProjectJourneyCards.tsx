@@ -22,7 +22,7 @@ export default function ProjectJourneyCards({color, info, icon}: Props) {
         >
             <Icon as={icon} color={color} width="50px" height="50px"/>
         </MotionBox>
-        <Text textAlign="left" fontSize="sm" minHeight="160px">
+        <Text fontSize="sm" minHeight="160px">
             {info}
         </Text>
     </VStack>

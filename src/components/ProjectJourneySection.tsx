@@ -8,7 +8,7 @@ import ProjectJourneyCards from './ProjectJourneyCards';
 
 const ProjectJourneySection = () => {
   return (
-    <Grid gap="36px" templateColumns="1fr 1fr" p="24px 16px">
+    <Grid gap="36px" templateColumns="1fr 1fr" p="24px 16px" bg="#222224">
       <ProjectJourneyCards 
         icon={FaLightbulb} 
         color="#EF3E66" 

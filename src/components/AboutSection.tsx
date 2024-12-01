@@ -33,11 +33,11 @@ const AboutSection = () => {
           Quem Somos
         </Text>
         <Text 
-          fontSize={{ base: '14px', sm: '15px', md: '16px' }} 
-          // textAlign={{ base: 'center', md: 'justify' }} 
+          fontSize="16px"
           mb={{ base: '32px', md: '60px' }}
         >
-          A Schema é uma casa de software formada por profissionais diversificados e multidisciplinares, trazendo um amplo conhecimento em diversas áreas.
+          A Schema é uma casa de software <br/>
+          formada por profissionais diversificados e multidisciplinares, trazendo um amplo conhecimento em diversas áreas.
           Diversos projetos entregues.
           Do design ao desenvolvimento, cuidamos de cada detalhe.
         </Text>
