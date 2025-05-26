@@ -10,7 +10,6 @@ const AboutSection = () => {
       alignItems="center"
       justifyContent="space-between"
     >
-      {/* Texto à esquerda com margem para alinhar */}
       <Box color="white" ml="110px" maxWidth="50%">
         <Text fontSize="24px" fontWeight="bold" mt="32px" mb="35px">
           Quem Somos
@@ -22,7 +21,6 @@ const AboutSection = () => {
         </Text>
       </Box>
 
-      {/* Imagem à direita com margem simétrica */}
       <Box position="relative" width="200px" height="200px" mr="110px">
         <Image
           src="/assets/equipe.png"
