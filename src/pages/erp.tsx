@@ -16,7 +16,6 @@ import Footer from '../components/Footer';
 import ERPSection from '../components/ErpSection';
 import WhatsappButton from '../components/WhatsappButton';
 
-// Criando o componente MotionBox que integra o Chakra UI com o Framer Motion
 const MotionBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
     isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -54,7 +53,6 @@ const ERPDevelopment = () => {
     <Box width="100%" bg="##25548A" minHeight="100vh">
       <Menu />
       
-      {/* Imagem da capa */}
       <Box width="100%" height="auto">
         <img
           src="/assets/erpcapa.jpg"
@@ -63,7 +61,6 @@ const ERPDevelopment = () => {
         />
       </Box>
 
-      {/* Conteúdo principal */}
       <Flex justifyContent="center" mt="26px">
         <Box width="calc(100% - 200px)" maxWidth="1131px">
           <SimpleGrid columns={{ base: 1, md: 2 }} spacingX={{ base: '20px', md: '230px' }} spacingY="26px" pb="40px">
