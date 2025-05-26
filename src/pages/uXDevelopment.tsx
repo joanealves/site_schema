@@ -33,7 +33,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ image, text, isHighlight }) =
   return (
     <VStack align="center" spacing="16px">
       <MotionBox
-        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} // Animação suave ao passar o mouse
+        whileHover={{ scale: 1.1, transition: { duration: 0.3 } }} 
         mb="16px"
       >
         <Image src={image} alt="logo ux" boxSize="60px" objectFit="cover" />
@@ -79,7 +79,6 @@ const UXDevelopment: React.FC = () => {
         />
       </Box>
 
-      {/* Conteúdo principal */}
       <Flex justifyContent="center" mt="26px" width="100%">
         <Box width="100%" maxWidth="1131px">
           <SimpleGrid columns={2} spacingX="230px" pb="40px">
@@ -122,7 +121,6 @@ const UXDevelopment: React.FC = () => {
       
       <WhatsappButton />
 
-      {/* Seção de contato */}
       <div ref={contactRef}>
         <Contact  buttonColor='#4E57A7'/>
       </div>
