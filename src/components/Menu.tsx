@@ -63,7 +63,6 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
 
         <Spacer />
 
-        {/* Menu Desktop */}
         <Flex display={{ base: "none", md: "flex" }} gap="10px" alignItems="center">
           <Text 
             onClick={onServicesClick} 
@@ -102,7 +101,6 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
           </Button>
         </Flex>
 
-        {/* Menu Hambúrguer para Mobile */}
         <IconButton
           aria-label="Open menu"
           icon={<HamburgerIcon />}
@@ -113,7 +111,6 @@ const Menu: React.FC<MenuProps> = ({ onServicesClick, onAboutClick, onContactCli
           borderColor="white"
         />
 
-        {/* Drawer (Menu Lateral) para Mobile */}
         <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
           <DrawerOverlay />
           <DrawerContent bg="#222224">
