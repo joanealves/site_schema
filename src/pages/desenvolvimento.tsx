@@ -15,7 +15,6 @@ import WebSection from '../components/WebSection';
 import WhatsappButton from '../components/WhatsappButton';
 import Contact from '../components/Contact';
 
-// Criando o componente MotionBox que integra o Chakra UI com o Framer Motion
 const MotionBox = chakra(motion.div, {
   shouldForwardProp: (prop) =>
     isValidMotionProp(prop) || shouldForwardProp(prop),
@@ -53,10 +52,8 @@ const ContentCard: React.FC<{
 const WebDevelopment = () => {
   return (
     <Box width="100%" bg="#222224" minHeight="100vh">
-      {/* Menu */}
       <Menu />
 
-      {/* Imagem da capa específica para a página de desenvolvimento */}
       <Box width="100%" height="auto">
         <img
           src="/assets/capadev.jpg"
@@ -65,7 +62,6 @@ const WebDevelopment = () => {
         />
       </Box>
 
-      {/* Conteúdo da página */}
       <Flex justifyContent="center" mt="26px">
         <Box width="calc(100% - 200px)" maxWidth="1131px">
           <SimpleGrid
@@ -113,16 +109,12 @@ const WebDevelopment = () => {
         </Box>
       </Flex>
 
-      {/* WebSection */}
       <WebSection imageSrc="/assets/xr.png" bgColor='#9D334B' />
 
-      {/* Botão do WhatsApp */}
       <WhatsappButton />
 
-      {/* Seção de contato */}
       <Contact />
 
-      {/* Footer */}
       <Footer />
     </Box>
   );
