@@ -5,7 +5,6 @@ import { BsCodeSlash } from "react-icons/bs";
 import { HiAdjustments } from "react-icons/hi"; 
 import { motion } from 'framer-motion';
 
-// Usa motion.div diretamente em vez de combinar com chakra
 const MotionBox = motion.div;
 
 const ProjectJourneySection = () => {
