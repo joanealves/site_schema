@@ -17,7 +17,7 @@ import { PhoneIcon, EmailIcon } from '@chakra-ui/icons';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 
 interface ContactProps {
-  buttonColor?: string; // Prop opcional para a cor do botão
+  buttonColor?: string; 
 }
 
 const Contact: React.FC<ContactProps> = ({ buttonColor = "#9D334B" }) => {
@@ -41,7 +41,6 @@ const Contact: React.FC<ContactProps> = ({ buttonColor = "#9D334B" }) => {
           background: 'linear-gradient(90deg, rgba(37, 84, 138, 0.04) 50%, transparent 50%)' 
         }}
       >
-        {/* Metade Esquerda para informações de contato */}
         <Box
           width="50%"
           p={20}
@@ -76,7 +75,6 @@ const Contact: React.FC<ContactProps> = ({ buttonColor = "#9D334B" }) => {
           </Box>
         </Box>
 
-        {/* Metade Direita para o formulário de contato */}
         <Flex
           width="50%"
           p={10}
