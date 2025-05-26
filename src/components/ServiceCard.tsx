@@ -1,4 +1,3 @@
-// ServiceCard.tsx
 import React from 'react';
 import { Box, Text, Button } from '@chakra-ui/react';
 import { IconType } from 'react-icons';
