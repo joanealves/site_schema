@@ -1,8 +1,6 @@
-// DynamicServiceCard.tsx
 import React, { Suspense } from 'react';
 import { IconType } from 'react-icons';
 
-// Carregamento dinâmico de ServiceCard
 const ServiceCard = React.lazy(() => import('./ServiceCard'));
 
 interface DynamicServiceCardProps {
