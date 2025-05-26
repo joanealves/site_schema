@@ -3,7 +3,7 @@ import { Box, Flex, Text, Image } from '@chakra-ui/react';
 
 interface WebSectionProps {
   imageSrc: string;
-  bgColor?: string; // Prop opcional para a cor de fundo
+  bgColor?: string; 
 }
 
 const WebSection: React.FC<WebSectionProps> = ({ imageSrc, bgColor = "#EF3E66" }) => {
